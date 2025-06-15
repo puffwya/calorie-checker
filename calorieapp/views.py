@@ -1,12 +1,8 @@
 import requests
-import logging
 from django.shortcuts import render
 from django.conf import settings
 from .forms import FoodSearchForm
 from django.conf import settings
-
-logger = logging.getLogger(__name__)
-logger.warning(f"USDA API KEY: {settings.USDA_API_KEY}")
 
 def food_search(request):
     calories = None
