@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from calorieapp import views
 from django.http import HttpResponse
 
 def home(request):
@@ -23,5 +24,5 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', views.food_search, name='food_search'),
 ]
