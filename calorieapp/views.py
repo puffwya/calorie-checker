@@ -30,7 +30,7 @@ def food_search(request):
     else:
         form = FoodSearchForm()
 
-    return render(request, 'calorieapp/templates/food_search.html', {
+    return render(request, 'calorieapp/food_search.html', {
         'form': form,
         'calories': calories,
         'error': error
