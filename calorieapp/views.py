@@ -11,7 +11,7 @@ def food_search(request):
         form = FoodSearchForm(request.POST)
         if form.is_valid():
             food_name = form.cleaned_data['food_name']
-            api_key = settings.USDA_API_KEY
+            api_key = QUBc42H7FmcWn3UA1LQ4mBZ7UOAWJ4UBk0bZopPx
             search_url = f'https://api.nal.usda.gov/fdc/v1/foods/search?api_key={api_key}&query={food_name}'
             
             try:
