@@ -8,7 +8,7 @@ def food_search(request):
     error = None
 
     if request.method == 'GET':
-        form = FoodSearchForm(request.GET)
+        form = FoodSearchForm(request.POST)
         if form.is_valid():
             food_name = form.cleaned_data['food_name']
             api_key = QUBc42H7FmcWn3UA1LQ4mBZ7UOAWJ4UBk0bZopPx
