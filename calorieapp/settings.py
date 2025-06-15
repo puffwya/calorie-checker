@@ -124,7 +124,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-default-key')
+USDA_API_KEY = os.getenv('USDA_API_KEY')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 LOGGING = {
