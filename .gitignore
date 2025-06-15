@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual env
+venv/
+
+# Django static files
+staticfiles/
+
+# VSCode / editor stuff
+*.code-workspace
+*.swp
+*.swo
+
+# Environment / secrets
+.env
