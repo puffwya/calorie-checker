@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calorieapp import views
+from . import views
 from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("Hello! Your Django app is running.")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.sit
     path('', views.food_search, name='food_search'),
 ]
