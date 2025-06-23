@@ -6,5 +6,5 @@ class UserLog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.search_term} at {self.timestamp}"
+        return f"{self.search_term} from {self.ip_address or 'unknown IP'} at {self.timestamp}"
 
