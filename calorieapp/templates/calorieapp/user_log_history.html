@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Calorie Checker Search History</title>
+</head>
+<body>
+
+    <h1>Your Search History</h1>
+
+    <ul>
+      {% for log in logs %}
+       <li>{{ log.timestamp }} — {{ log.search_term }}</li>
+      {% empty %}
+       <li>No logs found.</li>
+      {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -126,8 +126,11 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Auth redirect settings
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
 
 load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-default-key')

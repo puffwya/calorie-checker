@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.http import HttpResponse
+from django.contrib.auth import views as auth_views
 
 def home(request):
     return HttpResponse("Hello! Your Django app is running.")
@@ -25,4 +26,8 @@ def home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.food_search, name='food_search'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
+    path('logs/', views.user_log_history, name='user_log_history'),
+    path('register/', views.register, name='register'),
 ]
