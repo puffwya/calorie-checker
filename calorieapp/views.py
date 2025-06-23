@@ -19,6 +19,10 @@ def food_search(request):
             food_name = form.cleaned_data['food_name']
             api_key = settings.USDA_API_KEY
             search_url = f'https://api.nal.usda.gov/fdc/v1/foods/search?api_key={api_key}&query={food_name}'
+            try:
+                UserLog.objects.create(search_term=food_name,ip_address=get_client_ip(request)
+            except Exception as e:
+                print("Error saving log:", e)
             
             try:
                 response = requests.get(search_url)
