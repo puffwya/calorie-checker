@@ -3,6 +3,11 @@ from django.shortcuts import render
 from django.conf import settings
 from .forms import FoodSearchForm
 from django.conf import settings
+from .models import UserLog
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    return x_forwarded_for.split(',')[0] if x_forwarded_for else request.META.get('REMOTE_ADDR')
 
 def food_search(request):
     calories = None
