@@ -22,7 +22,7 @@ def register(request):
     else:
         form = RegisterForm()
 
-    return render(request, 'calorieapp/register.html', {'form': form})
+    return render(request, 'registration/register.html', {'form': form})
 
 @login_required
 def food_search(request):
